@@ -50,6 +50,13 @@ sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/privat
 sudo chmod +r /etc/ssl/private/uniform-https.key
 ```
 
+#### JSON Web Token Keys
+```
+sudo openssl genrsa -out /etc/ssl/private/uniform-jwt.key 2048
+sudo openssl rsa -in /etc/ssl/private/uniform-jwt.key -pubout -out /etc/ssl/certs/uniform-jwt.pub
+sudo chmod +r /etc/ssl/private/uniform-jwt.key
+```
+
 ### Getting Started
 First step is to compile resources and metadata into the project's source-code:
 ```
