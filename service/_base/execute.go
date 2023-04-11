@@ -170,8 +170,8 @@ func Execute(limit int, test, virtual bool, natsUri string, natsOptions []nats.O
 		}
 
 		p.Notice("unsubscribe.all", diary.M{
-			"topics.actions":       reflect.ValueOf(actions).MapKeys(),
-			"topics.subscriptions": reflect.ValueOf(subscriptions).MapKeys(),
+			"topics.actions":       uniform.MapKeysToSlice(actions),
+			"topics.subscriptions": uniform.MapKeysToSlice(subscriptions),
 			"count.actions":        len(actions),
 			"count.subscriptions":  len(subscriptions),
 		})
